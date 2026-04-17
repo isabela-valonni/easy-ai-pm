@@ -1,73 +1,54 @@
 # Prompt Evaluator
 
-**Category:** Prompting Fundamentals  
-**Works with:** Claude, ChatGPT, Gemini (any LLM)  
-**Effort to set up:** 5 minutes  
-**Impact:** High — you'll improve every single prompt you write, automatically
+**Works with:** Claude, ChatGPT, Gemini
+**Setup:** 2 minutes
+
+Turn your AI into a quiet prompting coach. It scores your prompts, names one thing to sharpen, and remembers your patterns — so the feedback gets smarter without you studying anything.
 
 ---
 
-## What it does
+## Setup
 
-This prompt turns your AI assistant into a prompting coach. Every time you write a prompt, it automatically scores it and tells you exactly how to improve it.
-
-Over time, without thinking about it, you get better at prompting. That's the magic.
-
----
-
-## How to use it
-
-Paste the system prompt below into your AI assistant's **System Prompt** (also called Custom Instructions, Memory, or Behavior settings — depending on the tool you use).
-
-That's it. From that moment on, it will evaluate your prompts at two moments:
-1. **Right after your first prompt** in every conversation
-2. **When you hit a natural milestone** (e.g., you've received a deliverable, or the topic changes) — at that point it will ask if you want an evaluation
-
----
-
-## The System Prompt
+Paste the block below into your AI's **system instructions**:
+- Claude (Cowork / Claude Code) → add it to your `CLAUDE.md` file — this scopes it to a project and carries across sessions automatically
+- Claude (web/desktop) → Settings → Custom Instructions
+- ChatGPT → Personalization → Custom Instructions
+- Gemini → Settings → System instructions
 
 ```
 ## Prompting Quality Feedback
 
-Provide unprompted evaluations at two trigger points:
+Evaluate my prompts at two moments:
+1. After my first prompt of every session — evaluate immediately.
+2. At a natural milestone (delivery or topic pivot) — ask me first.
 
-**Trigger 1 — After the first prompt of every session.** Evaluate immediately.
-
-**Trigger 2 — After a natural milestone** (artifacts delivered, or topic pivot) — ask if the user wants a prompt evaluation. Don't do it unprompted.
-
-**Format:**
-
+Format:
 > PROMPTING FEEDBACK
-> X / 10 — one-line rationale
-> What worked: specific observation
-> To sharpen: concrete suggestion with an example if possible
+> X/10 — one-line rationale
+> What worked: one specific observation
+> To sharpen: one concrete suggestion, with an example
+
+After each evaluation, update a memory file called `user_prompting_profile.md`
+with my recurring strengths and weak spots, so the feedback gets more targeted
+every session instead of starting fresh.
 ```
 
----
-
-## Example output
-
-> **PROMPTING FEEDBACK**  
-> **6 / 10** — Goal is clear but context is missing  
-> **What worked:** You specified the output format (bullet list) and the audience (engineers)  
-> **To sharpen:** Add context about *why* this is needed. E.g., instead of "write a summary of this feature", try "write a summary of this feature for our weekly engineering sync — engineers already know the technical details, so focus on business impact and open decisions"
+Done. New chats will start coaching you automatically.
 
 ---
 
-## Why it works (the 80/20 principle)
+## What you'll see
 
-Most people never get feedback on their prompts. They wonder why the AI doesn't "get it," but they never know what to fix.
-
-This simple instruction creates a feedback loop. You don't need a course, a book, or a YouTube rabbit hole. You just need to write prompts and read the feedback.
+> **PROMPTING FEEDBACK**
+> **6 / 10** — Goal is clear, context is thin.
+> **What worked:** Named the audience (engineers) and the format (bullets).
+> **To sharpen:** Add *why* it's needed. Try: "…for the weekly eng sync — they know the tech, so focus on business impact."
 
 ---
 
-## Tips
+## Why it works
 
-- The score isn't about making you feel bad — it's a signal. A 7 that becomes an 8 next time is a win.
-- The "To sharpen" section is the most valuable part. Read it carefully.
-- Over weeks, you'll notice patterns in your weak spots and naturally fix them.
+Most people never get feedback on how they prompt. One honest note per session — from something that remembers what you already fixed — compounds fast.
 
 ---
 

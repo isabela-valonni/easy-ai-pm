@@ -28,6 +28,34 @@ Everything here is part of the 20% — the handful of things that punch above th
 
 ---
 
+## Getting started
+
+**No setup. No account. No configuration required.** All you need is access to Claude (or any other LLM).
+
+### Using a prompt
+
+1. **Pick one prompt** from the `prompts/` folder — start with the Prompt Evaluator if you're not sure where to begin
+2. **Open the file** and copy the system prompt inside it
+3. **Paste it into your AI assistant's system instructions**
+   - Claude: Settings → Custom Instructions
+   - ChatGPT: Settings → Custom Instructions
+   - Gemini: Settings → System instructions
+4. **Start a new conversation** — the instructions run silently in the background
+
+That's it. You don't need to do anything else. Use your AI as you normally would.
+
+### Installing a skill (Claude Cowork only)
+
+If you want to go further and install a full automation from the `skills/` folder:
+
+1. **Open the skill file** you want to install from `skills/`
+2. **Follow the setup guide** inside — every skill includes step-by-step instructions
+3. **Trigger it** with a single command in Claude Cowork
+
+See [`skills/README.md`](./skills/README.md) for the full installation guide.
+
+---
+
 ## Start here
 
 ### 1. The Prompt Evaluator
@@ -70,6 +98,8 @@ Pick one. Use it until it's a habit. Move on.
 ## Contributing
 
 Found something simple that changed how you work? Open a PR. The bar is: *would a busy PM actually use this on a Tuesday morning?*
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for guidelines on what qualifies, how to structure your submission, and naming conventions.
 
 ---
 
