@@ -28,45 +28,12 @@ Everything here is part of the 20% — the handful of things that punch above th
 
 ---
 
-## Getting started
-
-**No setup. No account. No configuration required.** All you need is access to Claude (or any other LLM).
-
-### Using a prompt
-
-1. **Pick one prompt** from the `prompts/` folder — start with the Prompt Evaluator if you're not sure where to begin
-2. **Open the file** and copy the system prompt inside it
-3. **Paste it into your AI assistant's system instructions**
-   - Claude: Settings → Custom Instructions
-   - ChatGPT: Settings → Custom Instructions
-   - Gemini: Settings → System instructions
-4. **Start a new conversation** — the instructions run silently in the background
-
-That's it. You don't need to do anything else. Use your AI as you normally would.
-
-### Installing a skill (Claude Cowork only)
-
-If you want to go further and install a full automation from the `skills/` folder:
-
-1. **Open the skill file** you want to install from `skills/`
-2. **Follow the setup guide** inside — every skill includes step-by-step instructions
-3. **Trigger it** with a single command in Claude Cowork
-
-See [`skills/README.md`](./skills/README.md) for the full installation guide.
-
----
-
 ## Start here
 
-### 1. The Prompt Evaluator
-A prompt that quietly scores and improves *every prompt you write*. You don't need to study prompt engineering — it teaches you as you go, in the background.
+### 1. Prompt Evaluator — coaching methodology
+Turn your AI into a quiet prompting coach. It scores your prompts, names one thing to sharpen, and remembers your patterns — getting smarter as you go. No studying, no homework. Just gradual improvement, in the background.
 
 → [prompts/prompt-evaluator.md](./prompts/prompt-evaluator.md)
-
-### 2. The Skill Builder
-Want Claude to automate something for you, but don't know how to build a "skill"? Just describe what you want in plain English. This prompt walks you through the rest.
-
-→ [prompts/skill-builder.md](./prompts/skill-builder.md)
 
 ---
 
