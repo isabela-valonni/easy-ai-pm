@@ -35,6 +35,11 @@ Turn your AI into a quiet prompting coach. It scores your prompts, names one thi
 
 → [prompts/prompt-evaluator.md](./prompts/prompt-evaluator.md)
 
+### 2. The 10 Rules for AI PM's — set it once, forget it
+Stop re-explaining who you are at the top of every chat. Paste 10 PM-tuned rules into your AI's memory setting and every future conversation respects them — minimum deliverable, sources cited, conflicts surfaced, nothing posted without confirmation. Works in Claude, ChatGPT, and Gemini.
+
+→ [prompts/ai-memory-for-pms.md](./prompts/ai-memory-for-pms.md)
+
 ---
 
 ## What's inside
@@ -67,6 +72,10 @@ Pick one. Use it until it's a habit. Move on.
 Found something simple that changed how you work? Open a PR. The bar is: *would a busy PM actually use this on a Tuesday morning?*
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for guidelines on what qualifies, how to structure your submission, and naming conventions.
+
+---
+
+⭐ If this saved you 5 minutes, star the repo so other PMs can find it.
 
 ---
 

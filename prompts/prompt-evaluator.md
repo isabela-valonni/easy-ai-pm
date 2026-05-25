@@ -52,4 +52,4 @@ Most people never get feedback on how they prompt. One honest note per session �
 
 ---
 
-*Part of [easy-ai-pm](https://github.com/yourusername/easy-ai-pm) — practical AI for Product Managers*
+*Part of [easy-ai-pm](https://github.com/isabela-valonni/easy-ai-pm) — practical AI for Product Managers*
