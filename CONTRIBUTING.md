@@ -19,16 +19,13 @@ If it requires writing code, installing a tool, or reading a 10-minute explainer
 
 ## What to contribute
 
-There are three types of contributions:
+Two types of contributions:
 
 ### Prompts (`prompts/`)
-Copy-paste prompts that work with any LLM. These are the core of the repo — low friction, high impact.
+Copy-paste prompts that work with any LLM. The core of the repo — low friction, high impact.
 
 ### Skills (`skills/`)
-Reusable Claude automations for Cowork mode. These take a bit more setup but unlock repeatable workflows.
-
-### Agents (`agents/`)
-Pre-configured agent setups for specific PM tasks. Think of these as ready-made workflows you can run on demand.
+Reusable Claude Cowork / Claude Code skills. More setup than a prompt, but installable with one `/plugin install` command.
 
 ---
 
@@ -38,8 +35,7 @@ Every contribution lives in its own file, named in lowercase with hyphens:
 
 ```
 prompts/user-story-generator.md
-skills/weekly-status-update/
-agents/sprint-planning-agent/
+skills/weekly-status-update/SKILL.md
 ```
 
 ---
@@ -96,7 +92,7 @@ Use this structure for every new prompt file:
 
 ---
 
-*Part of [easy-ai-pm](https://github.com/yourusername/easy-ai-pm) — practical AI for Product Managers*
+*Part of [easy-ai-pm](https://github.com/isabela-valonni/easy-ai-pm) — practical AI for Product Managers*
 ```
 
 ---
@@ -107,7 +103,6 @@ Use this structure for every new prompt file:
 |------|------------|---------|
 | Prompt files | lowercase, hyphenated | `user-story-generator.md` |
 | Skill folders | lowercase, hyphenated | `weekly-status-update/` |
-| Agent folders | lowercase, hyphenated | `sprint-planning-agent/` |
 | Categories | Title Case | `Stakeholder Comms` |
 
 ---

@@ -72,4 +72,4 @@ This prompt forces that clarity. Claude does the technical translation. You get 
 
 ---
 
-*Part of [easy-ai-pm](https://github.com/yourusername/easy-ai-pm) — practical AI for Product Managers*
+*Part of [easy-ai-pm](https://github.com/isabela-valonni/easy-ai-pm) — practical AI for Product Managers*

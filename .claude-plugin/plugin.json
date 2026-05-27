@@ -1,0 +1,11 @@
+{
+  "name": "ai-memory-for-pms",
+  "description": "The 10 Rules for AI PM's — behavioral guidelines that make AI treat you like a PM by default. Inspired by Andrej Karpathy's observations on LLM pitfalls, translated for the PM workflow.",
+  "version": "1.0.0",
+  "author": {
+    "name": "isabela-valonni"
+  },
+  "license": "MIT",
+  "keywords": ["product-management", "pm", "ai", "memory", "guidelines", "claude"],
+  "skills": ["./skills/ai-memory-for-pms"]
+}

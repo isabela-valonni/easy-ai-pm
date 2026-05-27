@@ -1,0 +1,31 @@
+{
+  "name": "easy-ai-pm",
+  "id": "easy-ai-pm",
+  "owner": {
+    "name": "isabela-valonni"
+  },
+  "metadata": {
+    "description": "Practical AI for Product Managers — starting with the 10 Rules that make every AI chat treat you like a PM by default",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ai-memory-for-pms",
+      "source": "./",
+      "description": "The 10 Rules for AI PM's — paste once, every chat respects them. Forces clarifying questions, sourcing, surgical edits, and confirmation before public posts.",
+      "version": "1.0.0",
+      "author": {
+        "name": "isabela-valonni"
+      },
+      "keywords": [
+        "product-management",
+        "pm",
+        "ai",
+        "memory",
+        "guidelines",
+        "claude"
+      ],
+      "category": "workflow"
+    }
+  ]
+}
