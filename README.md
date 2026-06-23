@@ -195,9 +195,11 @@ The pasteable rules block lives in **[prompts/ai-memory-for-pms.md](./prompts/ai
 
 ## Companion: Prompt Evaluator
 
-A quiet prompting coach that scores your prompts and remembers your patterns. Works alongside the 10 Rules — the rules shape *what* the AI does, the evaluator shapes *how you ask*.
+A quiet prompting evaluator that scores your prompts and remembers your patterns. Works alongside the 10 Rules — the rules shape *what* the AI does, the evaluator shapes *how you ask*.
 
-→ [prompts/prompt-evaluator.md](./prompts/prompt-evaluator.md)
+It lives in its own repo because it's universal (works for engineers, writers, students, anyone using AI) — not gated behind a PM-specific install.
+
+→ [github.com/isabela-valonni/prompt-evaluator](https://github.com/isabela-valonni/prompt-evaluator)
 
 ---
 
@@ -249,7 +251,6 @@ Pick the 10 Rules. Paste them once. Move on with your day.
 easy-ai-pm/
 ├── prompts/                          # Copy-paste prompts
 │   ├── ai-memory-for-pms.md          # ← The 10 Rules (flagship)
-│   ├── prompt-evaluator.md           # Companion: coaching loop
 │   └── skill-builder.md              # Bonus: build your own Cowork skill
 ├── skills/
 │   └── ai-memory-for-pms/SKILL.md    # Cowork-installable version of the 10 Rules
