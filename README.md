@@ -160,7 +160,33 @@ Hidden uncertainty is the most expensive failure mode in PM work.
 
 ## Install
 
-**Option A — Claude Code Plugin (one command)**
+The rules work best as **always-on context** — something the AI reads every session, with no command to remember and nothing to trigger. The first two options below do exactly that. The plugin is offered last, for people who prefer `/plugin`.
+
+**Option A — Paste into your AI's settings (works everywhere, recommended)**
+
+Copy the rules block from **[prompts/ai-memory-for-pms.md](./prompts/ai-memory-for-pms.md)** and paste it into:
+
+- **Claude (web/desktop)** → Settings → Custom Instructions
+- **ChatGPT** → Personalization → Custom Instructions *(splits across two boxes — paste rules 1–5 in the first, 6–10 in the second)*
+- **Gemini** → Settings → System instructions (or inside a Gem)
+
+**Option B — Per-project `CLAUDE.md` (Cowork / Claude Code)**
+
+This pulls a clean, rules-only file (no wrapper text, no code fence) so Claude reads it as binding instructions.
+
+**Recommended — append to your existing `CLAUDE.md`** (keeps whatever is already there; run it only once so the rules aren't duplicated):
+
+```bash
+echo "" >> CLAUDE.md && curl -s https://raw.githubusercontent.com/isabela-valonni/easy-ai-pm/main/prompts/claude-md-rules.md >> CLAUDE.md
+```
+
+**Alternative — new project with no `CLAUDE.md` yet** (this overwrites, so don't run it in a folder that already has one):
+
+```bash
+curl -o CLAUDE.md https://raw.githubusercontent.com/isabela-valonni/easy-ai-pm/main/prompts/claude-md-rules.md
+```
+
+**Option C — Claude Code plugin (optional)**
 
 From Cowork or Claude Code:
 
@@ -169,27 +195,13 @@ From Cowork or Claude Code:
 /plugin install ai-memory-for-pms@easy-ai-pm
 ```
 
-**Option B — Per-project `CLAUDE.md` (Cowork / Claude Code)**
+Two things to know: the plugin name is `ai-memory-for-pms` (with the trailing "s"). And if the marketplace add fails with an SSH host-key error, use the HTTPS URL instead:
 
-New project:
-
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/isabela-valonni/easy-ai-pm/main/prompts/ai-memory-for-pms.md
+```
+/plugin marketplace add https://github.com/isabela-valonni/easy-ai-pm.git
 ```
 
-Existing project (append):
-
-```bash
-echo "" >> CLAUDE.md && curl https://raw.githubusercontent.com/isabela-valonni/easy-ai-pm/main/prompts/ai-memory-for-pms.md >> CLAUDE.md
-```
-
-**Option C — Paste into your AI's settings (works everywhere else)**
-
-- **Claude (web/desktop)** → Settings → Custom Instructions
-- **ChatGPT** → Personalization → Custom Instructions *(splits across two boxes — paste rules 1–5 in the first, 6–10 in the second)*
-- **Gemini** → Settings → System instructions (or inside a Gem)
-
-The pasteable rules block lives in **[prompts/ai-memory-for-pms.md](./prompts/ai-memory-for-pms.md)**.
+Note that the plugin ships the rules as a skill, which the AI loads only when it judges them relevant. For guardrails you want applied to *every* task, Options A and B are more reliable.
 
 ---
 
@@ -250,7 +262,8 @@ Pick the 10 Rules. Paste them once. Move on with your day.
 ```
 easy-ai-pm/
 ├── prompts/                          # Copy-paste prompts
-│   ├── ai-memory-for-pms.md          # ← The 10 Rules (flagship)
+│   ├── ai-memory-for-pms.md          # ← The 10 Rules, human-readable (paste into settings)
+│   ├── claude-md-rules.md            # ← The 10 Rules, rules-only (curl into CLAUDE.md)
 │   └── skill-builder.md              # Bonus: build your own Cowork skill
 ├── skills/
 │   └── ai-memory-for-pms/SKILL.md    # Cowork-installable version of the 10 Rules
