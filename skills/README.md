@@ -1,6 +1,6 @@
 # Skills
 
-This folder packages the 10 Rules as a [Claude skill](https://docs.claude.com) — so Cowork and Claude Code can install them with a single `/plugin install` command instead of pasting into Custom Instructions.
+This folder packages the 10 Rules as a Claude skill — so Cowork and Claude Code can install them with a single `/plugin install` command instead of pasting into Custom Instructions.
 
 **Works with:** Claude Cowork mode, Claude Code
 

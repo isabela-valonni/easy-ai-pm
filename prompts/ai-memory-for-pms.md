@@ -11,12 +11,12 @@ Most AIs forget who you are between chats. Modern tools have a setting that reme
 
 Paste the block below into your AI's **system instructions**:
 
-- Claude (Cowork / Claude Code) → save it as `CLAUDE.md` in your project folder — Claude reads it automatically every session
 - Claude (web/desktop) → Settings → Custom Instructions
 - ChatGPT → Personalization → Custom Instructions
 - Gemini → Settings → System instructions (or inside a Gem)
+- Claude (Cowork / Claude Code) → save it as `CLAUDE.md` in your project folder, and Claude reads it automatically every session
 
-> **Heads-up:** ChatGPT splits Custom Instructions across two boxes with a length cap on each. If the full block doesn't fit, paste rules 1–5 in the first box and rules 6–10 in the second.
+> **Heads-up:** In ChatGPT, paste the whole block into the "How would you like ChatGPT to respond?" box. It fits in one box, and that's the field that shapes responses (the other box is for facts about you).
 
 ```
 I'm a Product Manager. On every task:

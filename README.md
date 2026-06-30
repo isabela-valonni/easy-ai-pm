@@ -8,290 +8,99 @@ Inspired by [Andrej Karpathy's observations](https://x.com/karpathy/status/20158
 
 ---
 
-## The Problems
+## The Problem
 
 What AI does to your work when nothing tells it otherwise:
 
-> Pretends to have read the linked ticket, thread, or doc — then writes a summary that misses the actual ask.
+> Pretends to have read the linked ticket, then writes a summary that misses the actual ask.
 
-> Writes a 9-paragraph one-pager when you wanted three lines. Adds an executive summary, an FAQ, and a glossary you didn't ask for.
+> Writes a 9-paragraph one-pager when you wanted three lines.
 
-> Drafts the email to your VP and the same email to the engineer in the same voice. Both land wrong.
+> Drafts the email to your VP and to the engineer in the same voice. Both land wrong.
 
-> Blends three stakeholders into one fake consensus. The one who actually has decision rights gets averaged out.
+> Blends three stakeholders into one fake consensus. The decision-maker gets averaged out.
 
 > Cites no sources, then sounds authoritative. You find out it was wrong after you sent it.
 
-> "Improves" the ticket you asked it to tighten — rewrites the acceptance criteria, restructures the description, changes the title.
-
-> Returns a checklist with 12 items, 2 of which it couldn't actually verify, with no flag that they're guesses.
+> "Improves" the ticket you asked it to tighten, rewriting acceptance criteria you never touched.
 
 ## The Solution
 
-10 rules in one paste. Each rule directly addresses one of those failures:
+10 rules, one paste. Each fixes one failure:
 
-| Rule | Addresses |
-|------|-----------|
-| **1. Think first** | Wrong assumptions, no clarifying questions |
-| **2. Read context first** | Drafts written without checking the source |
-| **3. Minimum deliverable** | Bloat, speculative scope |
-| **4. Surgical edits** | Drive-by rewrites of things you didn't ask to change |
-| **5. Match the audience** | Same voice for execs, engineers, and customers |
-| **6. Follow conventions** | Tickets and stories that don't match team format |
-| **7. Cite sources** | Hallucinated authority |
-| **8. Surface conflicts** | Blended stakeholder input |
-| **9. Confirm before public** | Auto-posts to Slack, email, Linear before you saw the draft |
-| **10. Checkpoint and fail loud** | Hidden uncertainty in deliverables |
+| Rule | Fixes |
+|------|-------|
+| 1. Think first | Wrong assumptions, no clarifying questions |
+| 2. Read context first | Drafts written without checking the source |
+| 3. Minimum deliverable | Bloat, speculative scope |
+| 4. Surgical edits | Drive-by rewrites of things you didn't ask to change |
+| 5. Match the audience | Same voice for execs, engineers, and customers |
+| 6. Follow conventions | Tickets and stories that don't match team format |
+| 7. Cite sources | Hallucinated authority |
+| 8. Surface conflicts | Blended stakeholder input |
+| 9. Confirm before public | Auto-posts before you saw the draft |
+| 10. Checkpoint and fail loud | Hidden uncertainty in deliverables |
 
-See **[EXAMPLES.md](./EXAMPLES.md)** for a Tuesday-morning PM scenario per rule, showing what AI does without the rules vs. with them.
-
-## The Ten Rules in Detail
-
-### 1. Think first
-
-**State assumptions. Ask if unclear. Push back if a simpler approach exists.**
-
-LLMs pick an interpretation silently and run with it. This rule forces explicit reasoning:
-
-- Say which interpretation you chose, and why
-- If multiple interpretations exist, list them — don't pick silently
-- If a simpler approach exists, say so
-- If something's unclear, stop and ask
-
-**The test:** Before you draft, can you name what you assumed?
-
-### 2. Read context first
-
-**Check the source material before writing.**
-
-If the prompt mentions a linked ticket, thread, design, or doc — read it before drafting anything. Most "AI hallucination" in PM work is actually AI summarizing the prompt instead of the underlying source.
-
-**The test:** Could you cite a line from the source for every claim in your output?
-
-### 3. Minimum deliverable
-
-**Smallest artifact that meets the goal. No extra sections.**
-
-- No executive summary unless asked
-- No FAQ unless asked
-- No "in case you also need" sections
-- If 9 paragraphs could be 3, rewrite to 3
-
-**The test:** Would a busy PM read this and think "I asked for less than this"?
-
-### 4. Surgical edits
-
-**Touch only what I asked. Match the existing style.**
-
-When editing a story, ticket, doc, or email:
-
-- Don't "improve" the parts I didn't ask to change
-- Don't restructure if I asked to tighten
-- Match the existing voice and format
-- If you notice an unrelated issue, mention it — don't fix it
-
-**The test:** Every changed line should trace directly to the request.
-
-### 5. Match the audience
-
-**Engineering = precise. Exec = outcome-first, no jargon. Customer = benefit-led.**
-
-If the audience isn't clear from the prompt, ask. Don't write one voice and let me adapt it.
-
-| Audience | Lead with | Avoid |
-|----------|-----------|-------|
-| Engineering | The specific constraint or behavior | Business framing, vague outcomes |
-| Exec | Outcome, decision needed, tradeoff | Implementation detail, jargon |
-| Customer | Benefit, plain language | Internal vocabulary, hedging |
-
-### 6. Follow conventions
-
-**Use the formats the team already uses.**
-
-- User stories: *"As a [persona], I want [outcome] so that [value]."*
-- Acceptance criteria: *Given / When / Then*
-- Tickets: imperative title, problem first, then solution
-- If the team has a different convention, match that
-
-### 7. Cite sources
-
-**Every summary or claim links to where it came from.**
-
-- Link to the ticket, thread, doc, or message
-- If there's no source, label it as an assumption
-- No source + no flag = lie
-
-**The test:** Could I open every claim in a new tab?
-
-### 8. Surface conflicts
-
-**If stakeholders disagree, name it. Pick one with reasoning. Never blend.**
-
-When sources disagree:
-
-- Name the disagreement explicitly
-- Pick one (more recent / more authoritative / closer to the user)
-- Flag the other so I can override
-
-Blended consensus is worse than a disagreement, because it hides which decision-maker got overruled.
-
-### 9. Confirm before anything public
-
-**Draft first. Send second. Never auto-post to shared spaces.**
-
-Slack messages, emails, Linear tickets, Notion pages, customer replies — draft them, show me, wait for me to send. No "I went ahead and posted it."
-
-### 10. Checkpoint and fail loud
-
-**After each step: what's done, verified, left, skipped — and why.**
-
-For multi-step work, end with a status block:
-
-```
-✅ Done: [steps with sources]
-⚠️  Verified-with-caveat: [what I couldn't fully check, and why]
-⏭️  Skipped: [what I didn't do, and why]
-❓ Open: [what I need from you to finish]
-```
-
-Hidden uncertainty is the most expensive failure mode in PM work.
+See **[EXAMPLES.md](./EXAMPLES.md)** for a Tuesday-morning scenario per rule — what AI does without each rule, and with it.
 
 ---
 
 ## Install
 
-The rules work best as **always-on context** — something the AI reads every session, with no command to remember and nothing to trigger. The first two options below do exactly that. The plugin is offered last, for people who prefer `/plugin`.
+The rules work best as **always-on context**: read every session, with nothing to trigger. Two ways below do that. A plugin is offered last, for people who prefer `/plugin`.
 
-**Option A — Paste into your AI's settings (works everywhere, recommended)**
+**1. Paste into your AI's settings (works everywhere)**
 
-Copy the rules block from **[prompts/ai-memory-for-pms.md](./prompts/ai-memory-for-pms.md)** and paste it into:
+Copy the block from **[prompts/ai-memory-for-pms.md](./prompts/ai-memory-for-pms.md)** into:
 
-- **Claude (web/desktop)** → Settings → Custom Instructions
-- **ChatGPT** → Personalization → Custom Instructions *(splits across two boxes — paste rules 1–5 in the first, 6–10 in the second)*
-- **Gemini** → Settings → System instructions (or inside a Gem)
+- Claude (web/desktop) → Settings → Custom Instructions
+- ChatGPT → Personalization → Custom Instructions (paste the whole block into the "How would you like ChatGPT to respond?" box; it fits)
+- Gemini → Settings → System instructions (or inside a Gem)
 
-**Option B — Per-project `CLAUDE.md` (Cowork / Claude Code)**
+**2. Claude Code / Cowork (per-project `CLAUDE.md`)**
 
-This pulls a clean, rules-only file (no wrapper text, no code fence) so Claude reads it as binding instructions.
-
-**Recommended — append to your existing `CLAUDE.md`** (keeps whatever is already there; run it only once so the rules aren't duplicated):
+Append the rules to your project's `CLAUDE.md`. Run it once so they aren't duplicated:
 
 ```bash
 echo "" >> CLAUDE.md && curl -s https://raw.githubusercontent.com/isabela-valonni/easy-ai-pm/main/prompts/claude-md-rules.md >> CLAUDE.md
 ```
 
-**Alternative — new project with no `CLAUDE.md` yet** (this overwrites, so don't run it in a folder that already has one):
+New project with no `CLAUDE.md` yet? Swap `>> CLAUDE.md` for `-o CLAUDE.md` to create one.
 
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/isabela-valonni/easy-ai-pm/main/prompts/claude-md-rules.md
-```
-
-**Option C — Claude Code plugin (optional)**
-
-From Cowork or Claude Code:
-
-```
-/plugin marketplace add isabela-valonni/easy-ai-pm
-/plugin install ai-memory-for-pms@easy-ai-pm
-```
-
-Two things to know: the plugin name is `ai-memory-for-pms` (with the trailing "s"). And if the marketplace add fails with an SSH host-key error, use the HTTPS URL instead:
-
-```
-/plugin marketplace add https://github.com/isabela-valonni/easy-ai-pm.git
-```
-
-Note that the plugin ships the rules as a skill, which the AI loads only when it judges them relevant. For guardrails you want applied to *every* task, Options A and B are more reliable.
-
----
-
-## Companion: Prompt Evaluator
-
-A quiet prompting evaluator that scores your prompts and remembers your patterns. Works alongside the 10 Rules — the rules shape *what* the AI does, the evaluator shapes *how you ask*.
-
-It lives in its own repo because it's universal (works for engineers, writers, students, anyone using AI) — not gated behind a PM-specific install.
-
-→ [github.com/isabela-valonni/prompt-evaluator](https://github.com/isabela-valonni/prompt-evaluator)
+Prefer a plugin? Run `/plugin marketplace add isabela-valonni/easy-ai-pm` then `/plugin install ai-memory-for-pms@easy-ai-pm`. (The plugin name ends in `-s`; if the marketplace add hits an SSH error, use the HTTPS URL `https://github.com/isabela-valonni/easy-ai-pm.git`.) The plugin ships the rules as a skill the AI loads when it judges them relevant; for guardrails on *every* task, options 1 and 2 are more reliable.
 
 ---
 
 ## How to Know It's Working
 
-You'll see:
+Clarifying questions come before the draft, not after. Tickets and stories arrive in your team's format the first time. The AI pushes back when a prompt is unclear instead of guessing. Multi-step work ends with a status block. Drafts wait for your "send it" instead of auto-posting. If these fade, the rules have drifted out of memory — re-paste.
 
-- **Fewer "wait, that's not what I asked for" moments** — clarifying questions come before the draft, not after
-- **Tickets and stories in your team's format the first time** — no reformatting
-- **Pushback when your prompt is unclear** — instead of confident guesses
-- **Status blocks at the end of multi-step work** — so you know what's verified and what isn't
-- **Drafts, not auto-sends** — nothing leaves your editor without you confirming
+## Tradeoff
 
-If you stop seeing these, the rules have drifted out of memory or the chat is overriding them. Re-paste.
+These rules bias toward caution over speed. For one-off questions ("explain RICE scoring"), use judgment. Not every chat needs the full rigor. The goal is fewer costly mistakes on real PM work, not slower lookups.
 
-## Tradeoff Note
+## How to evolve them
 
-These rules bias toward **caution over speed**. For one-off questions ("explain RICE scoring," "what's a fishbone diagram"), use judgment — not every chat needs the full rigor.
-
-The goal is reducing costly mistakes on real PM work (tickets, exec updates, customer comms, stakeholder summaries) — not slowing down quick lookups.
-
-## How to Evolve Your Rules
-
-Every few weeks, ask yourself: *"Have I been making the same correction more than twice?"*
-
-If yes, add it as Rule 11 (or 12). Your memory should grow with you.
-
-Keep it under 15 rules total — past that, AIs start ignoring the middle.
+Every few weeks, ask: *"Have I made the same correction more than twice?"* If yes, add it as Rule 11. Keep it under 15 total. Past that, AIs start ignoring the middle.
 
 ---
 
-## The Method (why these 10 specifically)
+## Why these 10 (the method)
 
-Three ideas, one method:
+Three ideas, one method. **Pareto** — 80% of your results come from 20% of what you do. **Essentialism** — the hard part isn't working more, it's choosing less but better. **Easy-first** — of that essential 20%, start with what takes 5 minutes to learn.
 
-- **Pareto** — 80% of your results come from 20% of what you do
-- **Essentialism** — the hard part isn't working more, it's choosing less but better
-- **Easy-first** — of that essential 20%, start with what takes 5 minutes to learn
-
-Most AI content tries to turn you into an AI expert. This repo does the opposite: it gives you the smallest set of rules that's both high-leverage *and* easy to adopt.
-
-Pick the 10 Rules. Paste them once. Move on with your day.
+Most AI content tries to turn you into an expert. This does the opposite — the smallest set of rules that's both high-leverage and easy to adopt. Pick the 10. Paste once. Move on with your day.
 
 ---
 
-## What's inside
+## Related
 
-```
-easy-ai-pm/
-├── prompts/                          # Copy-paste prompts
-│   ├── ai-memory-for-pms.md          # ← The 10 Rules, human-readable (paste into settings)
-│   ├── claude-md-rules.md            # ← The 10 Rules, rules-only (curl into CLAUDE.md)
-│   └── skill-builder.md              # Bonus: build your own Cowork skill
-├── skills/
-│   └── ai-memory-for-pms/SKILL.md    # Cowork-installable version of the 10 Rules
-├── .claude-plugin/                   # Plugin manifests for /plugin install
-├── EXAMPLES.md                       # Wrong-vs-Right PM scenarios per rule
-└── CONTRIBUTING.md                   # How to add to the repo
-```
-
----
-
-## Contributing
-
-Found a rule you keep adding manually? Open a PR. The bar is: *would a busy PM actually use this on a Tuesday morning?*
-
-See **[CONTRIBUTING.md](./CONTRIBUTING.md)** for guidelines.
-
----
-
-## Key Insight
-
-The leverage isn't the rules. It's that you stop typing them.
-
-One paste, set once, and every future task starts with the same guardrails — minimum deliverable, sources cited, conflicts surfaced, nothing posted without confirmation.
+- **[EXAMPLES.md](./EXAMPLES.md)** — each rule in action, wrong vs. right.
+- **[prompt-evaluator](https://github.com/isabela-valonni/prompt-evaluator)** — companion repo. The 10 Rules shape *what* the AI does; the evaluator shapes *how you ask*. They compose.
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** — found a rule you keep adding by hand? Open a PR.
 
 ---
 
 ⭐ If this saved you 5 minutes, star the repo so other PMs can find it.
-
----
 
 Built by a PM, for PMs.
